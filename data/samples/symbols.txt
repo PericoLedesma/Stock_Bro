@@ -1,0 +1,26 @@
+# Sample Stock Symbols for Testing
+
+## Major Tech Stocks
+AAPL - Apple Inc.
+GOOGL - Alphabet Inc.
+MSFT - Microsoft Corporation
+AMZN - Amazon.com Inc.
+META - Meta Platforms Inc.
+TSLA - Tesla Inc.
+NVDA - NVIDIA Corporation
+
+## Major Banks
+JPM - JPMorgan Chase & Co.
+BAC - Bank of America Corporation
+WFC - Wells Fargo & Company
+C - Citigroup Inc.
+
+## Major Indices (ETFs)
+SPY - SPDR S&P 500 ETF Trust
+QQQ - Invesco QQQ Trust
+IWM - iShares Russell 2000 ETF
+DIA - SPDR Dow Jones Industrial Average ETF
+
+## Cryptocurrency (if supported)
+BTC-USD - Bitcoin
+ETH-USD - Ethereum
