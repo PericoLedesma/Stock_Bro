@@ -2,17 +2,9 @@
 **Stock_Bro** will be a multi-agent system with specialized agents collaborating to deliver investment guidance.
 
 
-## 🚀 Features
-
-- [ ] **📊 Real-time Stock Data**: Fetch current and historical prices using `yfinance`.
-- [ ] **🔍 Technical Analysis**: Compute SMA, EMA, RSI, MACD, Bollinger Bands, and more.
-- [ ] **🤖 AI Predictions**: Random Forest-based price prediction experiments.
-- [ ] **🌐 REST API**: FastAPI-powered REST API for data and model access.
-- [ ] **📈 Trend Analysis**: Identify market trends and momentum.
-- [ ] **🎯 Support/Resistance**: Automatic detection of key price levels.
 
 
-## 📦 Application Modules
+## 📦 Application features
 
 ### Portfolio
 - Create and maintain a database of the current portfolio.
@@ -28,27 +20,49 @@
 - Suggest where to invest (e.g., sectors, tickers, ETFs).
 - Provide a market overview (breadth, volatility, macro context).
 
-
-## 🧠 Project Architecture Overview
-
-stock_bro/
-backend/
+## Basic Folder Structure
+Stock Bro App
+├── Frontend
+│   ├── public/                   # Static files (index.html, favicon, images)
+│   └── src/
+│       ├── components/           # Reusable UI components
+│       │   ├── Portfolio.js
+│       │   ├── AddStockForm.js
+│       │   └── MarketAnalysis.js
+│       │
+│       ├── pages/                # Full pages for routing
+│       │   ├── HomePage.js
+│       │   ├── PortfolioPage.js
+│       │   ├── AddStockPage.js
+│       │   └── MarketAnalysisPage.js
+│       │
+│       ├── services/             # API calls and backend integration
+│       │   └── api.js
+│       │
+│       ├── hooks/                # Custom React hooks
+│       │   └── usePortfolio.js
+│       │
+│       ├── context/              # Context API or global state
+│       │   └── PortfolioContext.js
+│       │
+│       ├── styles/               # CSS / Tailwind config
+│       │   └── index.css
+│       │
+│       ├── App.js                # Main layout and routing
+│       └── index.js              # Entry point
+│
+└── Backend
     ├── app/
-    │   ├── main.py
-    │   ├── models/
-    │   ├── services/
-    │   ├── agents/
-    │   └── utils/
-    ├── tests/
-    ├── Dockerfile
-    ├── requirements.txt
-    ├── README.md
-    ├── .env
-    └── .gitignore
-frontend/
-    ├── public/
-    ├── src/
-    ├── package.json
-    ├── Dockerfile
-    └── README.md
-
+    │   ├── main.py               # FastAPI app entry point
+    │   ├── models/               # Database models
+    │   │   └── stock.py
+    │   ├── routes/               # API endpoints
+    │   │   ├── portfolio.py
+    │   │   ├── market.py
+    │   │   └── stocks.py
+    │   ├── services/             # Business logic / calculations
+    │   │   └── portfolio_service.py
+    │   ├── database.py           # DB connection & session
+    │   └── config.py             # Config variables (DB URL, API keys)
+    │
+    └── requirements.txt          # Python dependencies
