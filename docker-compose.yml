@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend-fastapi
+      dockerfile: Dockerfile
+    container_name: backend-fastapi
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./backend-fastapi:/app
+    restart: unless-stopped
+    networks:
+      - stock-bro-network
+
+  # Streamlit Frontend
+  frontend:
+    build:
+      context: ./frontend-streamlit
+      dockerfile: Dockerfile
+    container_name: frontend-streamlit
+    ports:
+      - "8500:8500"
+    environment:
+      - BACKEND_URL=http://backend:8000
+    volumes:
+      - ./frontend-streamlit:/app
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - stock-bro-network
+
+networks:
+  stock-bro-network:
+    driver: bridge

@@ -24,5 +24,4 @@ if __name__ == "__main__":
 To test the server:
 curl http://127.0.0.1:8000/
 curl http://127.0.0.1:8000/items/1?q=test
-
 '''
